@@ -7,24 +7,32 @@
 
   <link rel="stylesheet" href="/eleventy-gh-demo/css/site.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto&display=fallback" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <header>
-  <a href="/eleventy-gh-demo/" class="link--home">My Blog</a>
+<div class="logo">JMH</div>
+  <a href="/eleventy-gh-demo/" class="home" >Blog</a>
   <a href="/eleventy-gh-demo/About" class="link--about">About</a>
+   <a href="/eleventy-gh-demo/About" class="link--about">Contact</a>
 </header>
 <main>
-  <article>
-  <h1>This Is My First Ever Post</h1>
-  <time datetime="2019-05-30T00:00:00.000Z">May 30, 2019</time>
-  <!-- Excerpt Start -->
-<p>This is the first post on my blog.</p>
+  <article class="main-article">
+<time datetime="2019-05-30T00:00:00.000Z">May 30, 2019</time>
+<h1>Kubernetes 1.24 - Introducing Non-Graceful Node Shutdown Alpha</h1>
+  
+  <img src="/eleventy-gh-demo/img/kubernetes.png" />
+<!-- Excerpt Start -->
+<p>Kubernetes v1.24 introduces alpha support for Non-Graceful Node Shutdown. This feature allows stateful workloads to failover to a different node after the original node is shutdown or in a non-recoverable state such as hardware failure or broken OS.</p>
 <!-- Excerpt End -->
-<p>Eleventy is super fresh init.</p>
+<p>You might have heard about the Graceful Node Shutdown capability of Kubernetes, and are wondering how the Non-Graceful Node Shutdown feature is different from that. Graceful Node Shutdown allows Kubernetes to detect when a node is shutting down cleanly, and handles that situation appropriately. A Node Shutdown can be &quot;graceful&quot; only if the node shutdown action can be detected by the kubelet ahead of the actual shutdown. However, there are cases where a node shutdown action may not be detected by the kubelet. This could happen either because the shutdown command does not trigger the systemd inhibitor locks mechanism that kubelet relies upon, or because of a configuration error (the ShutdownGracePeriod and ShutdownGracePeriodCriticalPods are not configured properly).</p>
+<p>Graceful node shutdown relies on Linux-specific support. The kubelet does not watch for upcoming shutdowns on Windows nodes (this may change in a future Kubernetes release).</p>
+<p>When a node is shutdown but without the kubelet detecting it, pods on that node also shut down ungracefully. For stateless apps, that's often not a problem (a ReplicaSet adds a new pod once the cluster detects that the affected node or pod has failed). For stateful apps, the story is more complicated. If you use a StatefulSet and have a pod from that StatefulSet on a node that fails uncleanly, that affected pod will be marked as terminating; the StatefulSet cannot create a replacement pod because the pod still exists in the cluster. As a result, the application running on the StatefulSet may be degraded or even offline. If the original, shut down node comes up again, the kubelet on that original node reports in, deletes the existing pods, and the control plane makes a replacement pod for that StatefulSet on a different running node. If the original node has failed and does not come up, those stateful pods would be stuck in a terminating status on that failed node indefinitely.</p>
 <h2>Want your own blog?</h2>
 <p>The code for this blog is available on GitHub:
 <a href="https://github.com/JonUK/eleventy-blog">https://github.com/JonUK/eleventy-blog</a></p>
-<img src="https://octodex.github.com/images/stormtroopocat.jpg">
 
 </article>
 </main>

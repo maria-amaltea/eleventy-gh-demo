@@ -7,56 +7,66 @@
 
   <link rel="stylesheet" href="/eleventy-gh-demo/css/site.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto&display=fallback" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <header>
-  <a href="/eleventy-gh-demo/" class="link--home">My Blog</a>
+<div class="logo">JMH</div>
+  <a href="/eleventy-gh-demo/" class="home" >Blog</a>
   <a href="/eleventy-gh-demo/About" class="link--about">About</a>
+   <a href="/eleventy-gh-demo/About" class="link--about">Contact</a>
 </header>
 <main>
   
+<h1> Welcome.</h1>
+<h3>You make my software turn into hardware!</h3>
+<div class="posts-list">
+
   <article>
+    <div class="post-image"><img src="/eleventy-gh-demo/img/plutus.jpg" /></div>
+    <div class="post-content">
+      <time datetime="2022-06-01T00:00:00.000Z">June 1, 2022</time>
+        <h2>
+          <a href="/eleventy-gh-demo/posts/2019/blog-post-2/">Plutus Community Docs - a new documentation site for devs, by devs</a>
+        </h2>
 
-    <h1>
-      <a href="/eleventy-gh-demo/posts/2019/blog-post-3/">I&#39;m da poss</a>
-    </h1>
+        <p>As Plutus matures, a new community-driven documentation site will offer a valuable source of documentation from devs building on Cardano</p>
 
-    <time datetime="2019-06-01T00:00:00.000Z">June 1, 2019</time>
-
-    <p>This is good stiff</p>
-
-    <a href="/eleventy-gh-demo/posts/2019/blog-post-3/">Read more</a>
-
+        <a href="/eleventy-gh-demo/posts/2019/blog-post-2/">Read more</a>
+      </div>
   </article>
 
   <article>
+    <div class="post-image"><img src="/eleventy-gh-demo/img/blogimg.jpg" /></div>
+    <div class="post-content">
+      <time datetime="2019-06-01T00:00:00.000Z">June 1, 2019</time>
+        <h2>
+          <a href="/eleventy-gh-demo/posts/2019/blog-post-3/">Ansible role for the provisioning of Shelly Cardano binaries</a>
+        </h2>
 
-    <h1>
-      <a href="/eleventy-gh-demo/posts/2019/blog-post-2/">How To Get Rich Quick</a>
-    </h1>
+        <p>As already known, the technical design of SPEC is based on the idea of diversity and robustness. We don't just deploy the official cardano-node docker images.</p>
 
-    <time datetime="2019-06-01T00:00:00.000Z">June 1, 2019</time>
-
-    <p>Buy the latest and greatest cryptocurrency that no-one has heard of.</p>
-
-    <a href="/eleventy-gh-demo/posts/2019/blog-post-2/">Read more</a>
-
+        <a href="/eleventy-gh-demo/posts/2019/blog-post-3/">Read more</a>
+      </div>
   </article>
 
   <article>
+    <div class="post-image"><img src="/eleventy-gh-demo/img/kubernetes.png" /></div>
+    <div class="post-content">
+      <time datetime="2019-05-30T00:00:00.000Z">May 30, 2019</time>
+        <h2>
+          <a href="/eleventy-gh-demo/posts/2019/blog-post-1/">Kubernetes 1.24 - Introducing Non-Graceful Node Shutdown Alpha</a>
+        </h2>
 
-    <h1>
-      <a href="/eleventy-gh-demo/posts/2019/blog-post-1/">This Is My First Ever Post</a>
-    </h1>
+        <p>Kubernetes v1.24 introduces alpha support for Non-Graceful Node Shutdown. This feature allows stateful workloads to failover to a different node after the original node is shutdown or in a non-recoverable state such as hardware failure or broken OS.</p>
 
-    <time datetime="2019-05-30T00:00:00.000Z">May 30, 2019</time>
-
-    <p>This is the first post on my blog.</p>
-
-    <a href="/eleventy-gh-demo/posts/2019/blog-post-1/">Read more</a>
-
+        <a href="/eleventy-gh-demo/posts/2019/blog-post-1/">Read more</a>
+      </div>
   </article>
 
+</div>
 </main>
 <footer>&copy; My Blog</footer>
 </body>
