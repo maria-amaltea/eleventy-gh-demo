@@ -80,7 +80,7 @@ h1 {
 h3 {
     font-family: 'Crimson Text', serif;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 24px;
     color: #888;
     margin: 12px 0;
 }
@@ -89,7 +89,7 @@ h2 {
     font-family: 'Crimson Text', serif;
     font-weight: normal;
     margin: 12px 0;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1.2;
 }
 
@@ -135,6 +135,10 @@ time {
     min-width: 90%;
 }
 
+.posts-list {
+    margin: 120px 0;
+}
+
 .posts-list .post-image {
     height: 200px;
     width: 25%;
@@ -155,4 +159,16 @@ time {
 .posts-list article {
     margin: 48px 0;
     display: flex;
+}
+
+@media (max-width: 738px) {
+    .posts-list article {
+        flex-direction: column;
+    }
+    .posts-list .post-content {
+        width: 100%;
+    }
+    .posts-list .post-image {
+        width: 100%;
+    }
 }
