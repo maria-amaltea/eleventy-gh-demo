@@ -6,18 +6,23 @@ pagination:
   reverse: true
   alias: posts
 ---
+
+<h1> Welcome.</h1>
+<h3>You make my software turn into hardware!</h3>
+<div class="posts-list">
 {% for post in posts %}
   <article>
+    <div class="post-image">{% first_image post %}</div>
+    <div class="post-content">
+      <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}</time>
+        <h2>
+          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+        </h2>
 
-    <h1>
-      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-    </h1>
+        {% excerpt post %}
 
-    <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}</time>
-
-    {% excerpt post %}
-
-    <a href="{{ post.url | url }}">Read more</a>
-
+        <a href="{{ post.url | url }}">Read more</a>
+      </div>
   </article>
 {% endfor %}
+</div>
