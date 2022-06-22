@@ -10,6 +10,7 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 92%;
     line-height: 1.5;
+    color: #666666;
 }
 
 p {
@@ -75,6 +76,7 @@ h1 {
     font-size: 80px;
     margin: 24px 0;
     line-height: 1.2;
+    color: #444;
 }
 
 h3 {
@@ -91,6 +93,7 @@ h2 {
     margin: 12px 0;
     font-size: 28px;
     line-height: 1.2;
+    color: #444;
 }
 
 h1>a:link,
